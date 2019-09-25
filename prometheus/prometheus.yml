@@ -1,0 +1,27 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+  # Attach these labels to any time series or alerts when communicating with
+  # external systems (federation, remote storage, Alertmanager).
+  external_labels:
+      monitor: 'docker-host-alpha'
+
+# Load and evaluate rules in this file every 'evaluation_interval' seconds.
+rule_files:
+  - "alert.rules"
+
+# A scrape configuration containing exactly one endpoint to scrape.
+scrape_configs:
+  - job_name: 'dummy'  # This is a default value, it is mandatory.
+    file_sd_configs:
+      - files:
+        - targets/target_*.json
+
+
+# Remote Read & Write to InfluxDB
+remote_write:
+  - url: "http://influxdb:8086/api/v1/prom/write?db=prometheus&u=admin&p=admin"
+
+remote_read:
+  - url: "http://influxdb:8086/api/v1/prom/read?db=prometheus&u=admin&p=admin"

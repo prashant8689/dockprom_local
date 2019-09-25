@@ -1,0 +1,10 @@
+[
+    {
+        "targets": [
+            "nodeexporter:9100"
+        ],
+        "labels": {
+            "job": "node_host"
+        }
+    }
+]
