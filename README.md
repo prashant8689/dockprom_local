@@ -5,7 +5,7 @@ Note: This is a customized version of https://github.com/stefanprodan/dockprom.g
 Credit: Stefan Prodan
 
 
-A monitoring solution for Docker hosts and containers with [Prometheus](https://prometheus.io/), [Grafana](http://grafana.org/), [cAdvisor](https://github.com/google/cadvisor) and [InfluxDB](https://github.com/influxdata/influxdb).
+A monitoring solution for Docker hosts and containers with [Prometheus](https://prometheus.io/), [Grafana](http://grafana.org/), and [InfluxDB](https://github.com/influxdata/influxdb).
 
 
 ## Install
@@ -13,8 +13,8 @@ A monitoring solution for Docker hosts and containers with [Prometheus](https://
 Clone this repository on your Docker host, cd into dockprom directory and run compose up:
 
 ```bash
-git clone https://github.com/manishgupta24/dockprom.git
-cd dockprom
+git clone https://github.com/prashant8689/dockprom_local.git
+cd dockprom_local
 
 ADMIN_USER=admin ADMIN_PASSWORD=admin docker-compose up -d
 ```
